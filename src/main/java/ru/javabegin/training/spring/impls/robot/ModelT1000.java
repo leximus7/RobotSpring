@@ -3,13 +3,14 @@ package ru.javabegin.training.spring.impls.robot;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import ru.javabegin.training.spring.common.Color;
 import ru.javabegin.training.spring.interfaces.Hand;
 import ru.javabegin.training.spring.interfaces.Head;
 import ru.javabegin.training.spring.interfaces.Leg;
 
 public class ModelT1000 extends BaseModel implements InitializingBean, DisposableBean {
 
-	private String color;
+	private Color color;
 	private int year;
 	private boolean soundEnabled;
 
@@ -20,14 +21,14 @@ public class ModelT1000 extends BaseModel implements InitializingBean, Disposabl
 		super(hand, leg, head);
 	}
 
-	public ModelT1000(Hand hand, Leg leg, Head head, String color, int year, boolean soundEnabled) {
+	public ModelT1000(Hand hand, Leg leg, Head head, Color color, int year, boolean soundEnabled) {
 		super(hand, leg, head);
 		this.color = color;
 		this.year = year;
 		this.soundEnabled = soundEnabled;
 	}
 
-	public ModelT1000(String color, int year, boolean soundEnabled) {
+	public ModelT1000(Color color, int year, boolean soundEnabled) {
 		this.color = color;
 		this.year = year;
 		this.soundEnabled = soundEnabled;
@@ -41,6 +42,7 @@ public class ModelT1000 extends BaseModel implements InitializingBean, Disposabl
 		System.out.println("color: " + color);
 		System.out.println("year: " + year);
 		System.out.println("can play sound: " + soundEnabled);
+		System.out.println();
 	}
 
 	@Override
@@ -48,11 +50,11 @@ public class ModelT1000 extends BaseModel implements InitializingBean, Disposabl
 		System.out.println("T1000 is dancing!");
 	}
 
-	public String getColor() {
+	public Color getColor() {
 		return color;
 	}
 
-	public void setColor(String color) {
+	public void setColor(Color color) {
 		this.color = color;
 	}
 
